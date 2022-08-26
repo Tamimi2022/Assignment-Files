@@ -22,7 +22,7 @@ def cache_zip(zip_path: str, cache_path: str):  # With 2 arguments
 # Point 3
 def cached_files():
     files_list = []
-    cachePath = os.path.join(directory, 'cache') 
+    cachePath = os.path.join(directory, 'files', 'cache') 
     for file in os.listdir(cachePath):
         filePath = os.path.join(cachePath, file)
         files_list.append(filePath)
