@@ -7,7 +7,7 @@ from zipfile import ZipFile
 
 # Point 1
 directory = os.getcwd()
-cachePath = os.path.join(directory, 'files', 'cache')
+cachePath = os.path.join(directory, 'cache')
 def clean_cache():
     if os.path.exists(cachePath):
         print(cachePath)
@@ -22,7 +22,7 @@ def cache_zip(zip_path: str, cache_path: str):  # With 2 arguments
 # Point 3
 def cached_files():
     files_list = []
-    cachePath = os.path.join(directory, 'files', 'cache') 
+    cachePath = os.path.join(directory, 'cache') 
     for file in os.listdir(cachePath):
         filePath = os.path.join(cachePath, file)
         files_list.append(filePath)
