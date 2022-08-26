@@ -7,7 +7,7 @@ from zipfile import ZipFile
 
 # Point 1
 directory = os.getcwd()
-cachePath = os.path.join(directory, 'cache')
+cachePath = os.path.join(directory, 'files', 'cache')
 def clean_cache():
     if os.path.exists(cachePath):
         print(cachePath)
