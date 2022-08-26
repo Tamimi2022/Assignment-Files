@@ -1,15 +1,13 @@
 __winc_id__ = "ae539110d03e49ea8738fd413ac44ba8"
 __human_name__ = "files"
 
-
-from cgi import test
-from importlib.resources import path
 import os
 import shutil
 from zipfile import ZipFile
 
 # Point 1
-cachePath = os.path.abspath("files/cache")
+directory = os.getcwd()
+cachePath = os.path.join(directory, 'cache')
 def clean_cache():
     if os.path.exists(cachePath):
         print(cachePath)
@@ -20,13 +18,11 @@ def clean_cache():
 def cache_zip(zip_path: str, cache_path: str):  # With 2 arguments
     with ZipFile(zip_path, "r") as zip:
         zip.extractall(cache_path)
-    #test = os.path.abspath("files/data.zip")  # Check data.zip file
-    #print(test)
     
 # Point 3
 def cached_files():
     files_list = []
-    cachePath = os.path.abspath("files/cache")  # Using absolute 
+    cachePath = os.path.join(directory, 'cache') 
     for file in os.listdir(cachePath):
         filePath = os.path.join(cachePath, file)
         files_list.append(filePath)
